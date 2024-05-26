@@ -1,0 +1,30 @@
+<!-- views/smjestaj/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smještaj List</title>
+</head>
+<body>
+    <h1>Smještaj List</h1>
+    <ul>
+        <% smjestaji.forEach(smjestaj => { %>
+            <li>
+                <%= smjestaj.Naziv %> - <%= smjestaj.Kapacitet %> - 
+                <% if (smjestaj.Podrucje) { %>
+                    <%= smjestaj.Podrucje.Naziv %> <!-- Provjera postoji li podrucje -->
+                <% } else { %>
+                    Podrucje nije definirano
+                <% } %>
+                <a href="/smjestaj/<%= smjestaj._id %>/edit">Edit</a> 
+                <form action="/smjestaj/<%= smjestaj._id %>/delete" method="post" style="display:inline;">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/smjestaj/new">Add New Smještaj</a>
+</body>
+</html>

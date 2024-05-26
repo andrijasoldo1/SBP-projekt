@@ -1,0 +1,22 @@
+<!-- views/zivotinje/edit.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Zivotinja</title>
+</head>
+<body>
+    <h1>Edit Zivotinja</h1>
+    <form action="/zivotinje/<%= zivotinja._id %>" method="POST">
+        <label for="Ime">Ime:</label>
+        <input type="text" id="Ime" name="Ime" value="<%= zivotinja.Ime %>" required>
+        <br>
+        <label for="Datum_rodjenj">Datum rodjenj:</label>
+        <input type="date" id="Datum_rodjenj" name="Datum_rodjenj" value="<%= zivotinja.Datum_rodjenj %>" required>
+        <br>
+        <label for="Zemlje_podrijetla">Zemlje podrijetla:</label>
+        <input type="text" id="Zemlje_podrijetla" name="Zemlje_podrijetla" value="<%= zivotinja.Zemlje_podrijetla %>" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

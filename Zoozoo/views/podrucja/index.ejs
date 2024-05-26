@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Područja</title>
+</head>
+<body>
+    <h1>Popis Područja</h1>
+    <ul>
+        <% podrucja.forEach(function(podrucje) { %>
+            <li><%= podrucje.Naziv %> 
+                <a href="/podrucja/<%= podrucje._id %>/edit">Uredi</a> 
+                <form action="/podrucja/<%= podrucje._id %>/delete" method="post" style="display:inline;">
+                    <button type="submit">Obriši</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/podrucja/new">Dodaj novo Područje</a>
+</body>
+</html>

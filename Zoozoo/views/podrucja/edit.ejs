@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Uredi Područje</title>
+</head>
+<body>
+    <h1>Uredi Područje</h1>
+    <form action="/podrucja/<%= podrucje._id %>" method="post">
+        <label for="Naziv">Naziv:</label>
+        <input type="text" id="Naziv" name="Naziv" value="<%= podrucje.Naziv %>" required>
+        <button type="submit">Spremi</button>
+    </form>
+    <a href="/podrucja">Nazad</a>
+</body>
+</html>
+

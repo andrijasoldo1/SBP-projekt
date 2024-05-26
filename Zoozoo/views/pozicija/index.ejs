@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pozicije</title>
+</head>
+<body>
+    <h1>Pozicije List</h1>
+    <ul>
+        <% pozicije.forEach(function(pozicija) { %>
+            <li><%= pozicija.Naziv %> - <%= pozicija.Opis %> 
+                <a href="/pozicija/<%= pozicija._id %>/edit">Edit</a> 
+                <form action="/pozicija/<%= pozicija._id %>" method="post" style="display:inline;">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/pozicija/new">Add New Pozicija</a>
+</body>
+</html>

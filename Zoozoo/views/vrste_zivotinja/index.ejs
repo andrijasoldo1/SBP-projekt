@@ -1,0 +1,21 @@
+<!-- views/vrste_zivotinja/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vrste Zivotinja List</title>
+</head>
+<body>
+    <h1>Vrste Zivotinja List</h1>
+    <ul>
+        <% vrsteZivotinja.forEach(vz => { %>
+            <li><%= vz.Naziv %> - <%= vz.Opis %> 
+                <a href="/vrste_zivotinja/<%= vz._id %>/edit">Edit</a> 
+                <form action="/vrste_zivotinja/<%= vz._id %>/delete" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/vrste_zivotinja/new">Add New Vrste Zivotinja</a>
+</body>
+</html>

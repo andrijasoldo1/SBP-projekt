@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Održavanje List</title>
+</head>
+<body>
+    <h1>Održavanje List</h1>
+    <ul>
+        <% odrzavanja.forEach(function(odrzavanje) { %>
+            <li><%= odrzavanje.Zaposlenik %> - <%= odrzavanje.Smjestaj %> - <%= odrzavanje.Datum_i_vrijeme %> - <%= odrzavanje.Vrsta_odrzavanja %> 
+                <a href="/odrzavanje/<%= odrzavanje._id %>/edit">Edit</a> 
+                <form action="/odrzavanje/<%= odrzavanje._id %>/delete" method="post" style="display:inline;">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/odrzavanje/new">Add New Održavanje</a>
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hrana</title>
+</head>
+<body>
+    <h1>Hrana List</h1>
+    <ul>
+        <% hrana.forEach(h => { %>
+            <li><%= h.Naziv %> - <%= h.Tip %> - <%= h.Kolicina %> 
+                <a href="/hrana/<%= h._id %>/edit">Edit</a> 
+                <form action="/hrana/<%= h._id %>/delete" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/hrana/new">Add New Hrana</a>
+</body>
+</html>

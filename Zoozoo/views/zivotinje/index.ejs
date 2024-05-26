@@ -1,0 +1,21 @@
+<!-- views/zivotinje/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zivotinje List</title>
+</head>
+<body>
+    <h1>Zivotinje List</h1>
+    <ul>
+        <% zivotinje.forEach(z => { %>
+            <li><%= z.Ime %> - <%= z.Datum_rodjenj %> - <%= z.Zemlje_podrijetla %> 
+                <a href="/zivotinje/<%= z._id %>/edit">Edit</a> 
+                <form action="/zivotinje/<%= z._id %>/delete" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/zivotinje/new">Add New Zivotinja</a>
+</body>
+</html>

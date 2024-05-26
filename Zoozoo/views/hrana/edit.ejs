@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Hrana</title>
+</head>
+<body>
+    <h1>Edit Hrana</h1>
+    <form action="/hrana/<%= hrana._id %>" method="post">
+        <label>Naziv:</label>
+        <input type="text" name="Naziv" value="<%= hrana.Naziv %>" required>
+        <br>
+        <label>Tip:</label>
+        <input type="text" name="Tip" value="<%= hrana.Tip %>" required>
+        <br>
+        <label>Kolicina:</label>
+        <input type="number" name="Kolicina" value="<%= hrana.Kolicina %>" required>
+        <br>
+        <button type="submit">Update Hrana</button>
+    </form>
+</body>
+</html>

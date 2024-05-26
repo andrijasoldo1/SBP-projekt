@@ -1,0 +1,22 @@
+<!-- views/ulaznice/edit.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Ulaznica</title>
+</head>
+<body>
+    <h1>Edit Ulaznica</h1>
+    <form action="/ulaznice/<%= ulaznica._id %>" method="POST">
+        <label for="Cijena">Cijena:</label>
+        <input type="number" id="Cijena" name="Cijena" value="<%= ulaznica.Cijena %>" required>
+        <br>
+        <label for="Datum_prodaje">Datum prodaje:</label>
+        <input type="date" id="Datum_prodaje" name="Datum_prodaje" value="<%= ulaznica.Datum_prodaje %>" required>
+        <br>
+        <label for="Datum_dolaska">Datum dolaska:</label>
+        <input type="date" id="Datum_dolaska" name="Datum_dolaska" value="<%= ulaznica.Datum_dolaska %>" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

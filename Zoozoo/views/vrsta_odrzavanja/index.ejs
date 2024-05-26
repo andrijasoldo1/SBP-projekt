@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vrsta odrzavanja</title>
+</head>
+<body>
+    <h1>Vrsta odrzavanja</h1>
+    <a href="/vrsta_odrzavanja/new">Add New</a>
+    <ul>
+        <% vrstaOdrzavanja.forEach(item => { %>
+            <li>
+                <%= item.Naziv %> - <%= item.Opis %>
+                <a href="/vrsta_odrzavanja/<%= item._id %>/edit">Edit</a>
+                <form action="/vrsta_odrzavanja/<%= item._id %>/delete" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

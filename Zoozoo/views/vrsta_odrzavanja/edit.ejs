@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Vrsta odrzavanja</title>
+</head>
+<body>
+    <h1>Edit Vrsta odrzavanja</h1>
+    <form action="/vrsta_odrzavanja/<%= vrstaOdrzavanja._id %>" method="POST">
+        <label for="Naziv">Naziv:</label>
+        <input type="text" id="Naziv" name="Naziv" value="<%= vrstaOdrzavanja.Naziv %>" required>
+        <br>
+        <label for="Opis">Opis:</label>
+        <input type="text" id="Opis" name="Opis" value="<%= vrstaOdrzavanja.Opis %>" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

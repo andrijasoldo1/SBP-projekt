@@ -1,0 +1,29 @@
+<!-- views/smjestaj/new.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Smještaj</title>
+</head>
+<body>
+    <h1>Add New Smještaj</h1>
+    <form action="/smjestaj" method="post">
+        <label for="Naziv">Naziv:</label>
+        <input type="text" id="Naziv" name="Naziv" required>
+        <br>
+        <label for="Kapacitet">Kapacitet:</label>
+        <input type="number" id="Kapacitet" name="Kapacitet" required>
+        <br>
+        <label for="Podrucje">Područje:</label>
+        <select id="Podrucje" name="Podrucje" required>
+            <% podrucja.forEach(podrucje => { %>
+                <option value="<%= podrucje._id %>"><%= podrucje.Naziv %></option>
+            <% }); %>
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+

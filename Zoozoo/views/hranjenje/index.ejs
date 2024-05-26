@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hranjenje List</title>
+</head>
+<body>
+    <h1>Hranjenje List</h1>
+    <ul>
+        <% hranjenje.forEach(function(hranjenje) { %>
+            <li><%= hranjenje.Zaposlenik %> - <%= hranjenje.Hrana %> - <%= hranjenje.Smjestaj %> - <%= hranjenje.Datum_i_vrijeme %> 
+                <a href="/hranjenje/<%= hranjenje._id %>/edit">Edit</a> 
+                <form action="/hranjenje/<%= hranjenje._id %>/delete" method="post" style="display:inline;">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/hranjenje/new">Add New Hranjenje</a>
+</body>
+</html>

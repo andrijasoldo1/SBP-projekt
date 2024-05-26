@@ -1,0 +1,21 @@
+<!-- views/ulaznice/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ulaznice List</title>
+</head>
+<body>
+    <h1>Ulaznice List</h1>
+    <ul>
+        <% ulaznice.forEach(u => { %>
+            <li><%= u.Cijena %> - <%= u.Datum_prodaje %> - <%= u.Datum_dolaska %> 
+                <a href="/ulaznice/<%= u._id %>/edit">Edit</a> 
+                <form action="/ulaznice/<%= u._id %>/delete" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/ulaznice/new">Add New Ulaznica</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- views/zaposlenici/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zaposlenici List</title>
+</head>
+<body>
+    <h1>Zaposlenici List</h1>
+    <ul>
+        <% zaposlenici.forEach(z => { %>
+            <li><%= z.Ime_i_prezime %> - <%= z.JMBG %> - <%= z.Datum_rodjenja %> - <%= z.Datum_zaposlenja %> - <%= z.Pozicija.Naziv %> 
+                <a href="/zaposlenici/<%= z._id %>/edit">Edit</a> 
+                <form action="/zaposlenici/<%= z._id %>/delete" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/zaposlenici/new">Add New Zaposlenici</a>
+</body>
+</html>

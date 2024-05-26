@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Održavanje</title>
+</head>
+<body>
+    <h1>Edit Održavanje</h1>
+    <form action="/odrzavanje/<%= odrzavanje._id %>/edit" method="post">
+        <label for="Zaposlenik">Zaposlenik:</label>
+        <select id="Zaposlenik" name="Zaposlenik" required>
+            <% zaposlenici.forEach(function(zaposlenik) { %>
+                <option value="<%= zaposlenik._id %>" <%= (odrzavanje.Zaposlenik.toString() === zaposlenik._id.toString()) ? 'selected' : '' %>><%= zaposlenik.Ime_i_prezime %></option>
+            <% }); %>
+        </select>
+        <br>
+        <label for="Smjestaj">Smještaj:</label>
+        <select id="Smjestaj" name="Smjestaj" required>
+            <% smjestaji.forEach(function(smjestaj) { %>
+                <option value="<%= smjestaj._id %>" <%= (odrzavanje.Smjestaj.toString() === smjestaj._id.toString()) ? 'selected' : '' %>><%= smjestaj.Naziv %></option>
+            <% }); %>
+        </select>
+        <br>
+        <label for="Datum_i_vrijeme">Datum i vrijeme:</label>
+        <input type="datetime-local" id="Datum_i_vrijeme" name="Datum_i_vrijeme" value="<%= odrzavanje.Datum_i_vrijeme.toISOString().substring(0, 16) %>" required>
+        <br>
+        <label for="Vrsta_odrzavanja">Vrsta održavanja:</label>
+        <select id="Vrsta_odrzavanja" name="Vrsta_odrzavanja" required>
+            <% vrsteOdrzavanja.forEach(function(vrstaOdrzavanja) { %>
+                <option value="<%= vrstaOdrzavanja._id %>" <%= (odrzavanje.Vrsta_odrzavanja.toString() === vrstaOdrzavanja._id.toString()) ? 'selected' : '' %>><%= vrstaOdrzavanja.Naziv %></option>
+            <% }); %>
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
